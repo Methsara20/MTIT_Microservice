@@ -9,14 +9,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
 app.use('/patients', patientRoutes);
-
-// Swagger
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 const PORT = 3001;
 
 app.listen(PORT, () => {
-    console.log(`Patient Service running on http://localhost:${PORT}`);
+  console.log(`Patient Service running on http://localhost:${PORT}`);
+  console.log(`Swagger UI:  http://localhost:${PORT}/docs`);
 });
