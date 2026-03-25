@@ -2,19 +2,23 @@ const express = require('express');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 
-const patientRoutes = require('./routes/patientRoutes');
+const medicineRoutes = require('./routes/medicineRoutes');
 const swaggerSpec = require('./swagger/swagger');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/patients', patientRoutes);
+// Routes
+app.use('/pharmacy/medicines', medicineRoutes);
+
+// Swagger
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-const PORT = 3001;
+const PORT = 3004;
+
 
 app.listen(PORT, () => {
-  console.log(`Patient Service running on http://localhost:${PORT}/patients`);
+  console.log(`Pharmacy Service running on http://localhost:${PORT}/pharmacy/medicines`);
   console.log(`Swagger UI:  http://localhost:${PORT}/docs`);
 });
