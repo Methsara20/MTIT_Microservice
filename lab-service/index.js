@@ -21,6 +21,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Lab Service running on http://localhost:${PORT}`);
+  console.log(`Lab Service running on http://localhost:${PORT}/tests`);
   console.log(`Swagger docs: http://localhost:${PORT}/api-docs`);
 });
