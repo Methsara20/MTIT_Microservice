@@ -42,10 +42,10 @@ app.use('/api/appointments', createServiceProxy(
 ));
 
 // Pharmacy Service
-app.use('/api/medicines', createServiceProxy(
-    '/api/medicines',
+app.use('/api//pharmacy/medicines', createServiceProxy(
+    '/api/pharmacy/medicines',
     'http://localhost:3004',
-    '/medicines'
+    '/pharmacy/medicines'
 ));
 
 // Billing Service

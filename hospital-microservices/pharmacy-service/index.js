@@ -17,6 +17,8 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 const PORT = 3004;
 
+
 app.listen(PORT, () => {
-    console.log(`Pharmacy Service running on http://localhost:${PORT}`);
+  console.log(`Pharmacy Service running on http://localhost:${PORT}/pharmacy/medicines`);
+  console.log(`Swagger UI:  http://localhost:${PORT}/docs`);
 });
