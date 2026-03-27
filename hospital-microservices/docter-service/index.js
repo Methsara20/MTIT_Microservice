@@ -13,10 +13,12 @@ app.use(express.json());
 app.use('/doctors', doctorRoutes);
 
 // Swagger
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/doctor', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 const PORT = 3002;
 
+
 app.listen(PORT, () => {
-    console.log(`Doctor Service running on http://localhost:${PORT}`);
+  console.log(`Doctor Service running on http://localhost:${PORT}/doctors`);
+  console.log(`Swagger docs: http://localhost:${PORT}/doctor`);
 });
